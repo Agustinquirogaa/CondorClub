@@ -1,0 +1,1252 @@
+/* =========================
+   Reset CSS básico
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Unificar fondos de todas las secciones y tarjetas */
+.experiences-section,
+.experience-details,
+.club-section,
+.nfts-section,
+.photo-gallery,
+.activities-section,
+.nft-section,
+.contact-section,
+.blog-section {
+  background: #111 !important;
+}
+
+.experience-card,
+.activity-card,
+.nft-card,
+.blog-post,
+.highlight,
+.contact-option {
+  background: #181818 !important;
+}
+
+.gallery-caption {
+  background: rgba(20,20,20,0.92) !important;
+}
+
+.nft-display {
+  background: #181818 !important;
+}
+
+/* Unificar headers sticky y subtítulos */
+.section-title, .nfts-section h2, .photo-gallery h2, .activities-section h2, .nft-section h2 {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #111 !important;
+  padding: 0.5rem 0 0.5rem 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem !important;
+  color: #fff;
+  text-align: left;
+  font-family: 'Cinzel', serif;
+}
+
+@media (max-width: 768px) {
+  .section-title, .nfts-section h2, .photo-gallery h2, .activities-section h2, .nft-section h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Ajustar proporción de texto debajo de subtítulos */
+.overview-text, .gallery-caption p, .activity-card p, .nft-details p, .blog-post p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  text-align: left;
+}
+
+/* Centrar contenido debajo de subtítulos en desktop */
+.container, .nft-display, .gallery-vertical, .activities-grid {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Eliminar gradientes de fondo */
+.experience-overview, .contact-section {
+  background: #111 !important;
+}
+
+/* Blog fondo y artículos */
+.blog-section {
+  background: #111 !important;
+}
+
+.blog-post {
+  background: #181818 !important;
+  color: #fff;
+}
+
+/* =========================
+   Hero Section - Imagen de Fondo
+   ========================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.hero-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: 1;
+  display: none;
+}
+
+.hero:not(:has(video)) .hero-fallback {
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-family: "Cinzel", serif;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 0;
+}
+
+/* =========================
+   Navegación Fija
+   ========================= */
+.nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #d4af37;
+  outline: none;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .nav ul {
+    gap: 12px;
+  }
+  .nav {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* =========================
+   Sección Experiencias
+   ========================= */
+.experiences-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.experience-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.experience-card:hover,
+.experience-card:focus-within {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.experience-card .discover-btn {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  align-self: center;
+}
+
+/* =========================
+   Imágenes de las Tarjetas de Experiencia
+   ========================= */
+.experience-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.experience-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 1.2rem 0 0.5rem 0;
+}
+
+.experience-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0 1.2rem 1.2rem 1.2rem;
+}
+
+.discover-btn {
+  display: inline-block;
+  background: #d4af37;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7em 1.5em;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.discover-btn:hover,
+.discover-btn:focus {
+  background: #bfa133;
+  color: #fff;
+  outline: none;
+}
+
+/* =========================
+   Responsive para Experiencias
+   ========================= */
+@media (max-width: 768px) {
+  .experience-card img {
+    height: 250px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .experience-card h3 {
+    font-size: 1.2rem;
+  }
+  .experience-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   Sección Membresía
+   ========================= */
+.membership-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.membership-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+}
+
+.membership-card {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.membership-card.rotate {
+  transform: rotateY(360deg);
+}
+
+/* =========================
+   Responsive para Membresía
+   ========================= */
+@media (max-width: 768px) {
+  .membership-card {
+    max-width: 250px;
+  }
+  .membership-description {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   Sección The Club
+   ========================= */
+.club-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.location, .social-links {
+  flex: 1;
+  min-width: 250px;
+}
+
+.location h3, .social-links h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.location p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: #d4af37;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================
+   Sección NFTs
+   ========================= */
+.nfts-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.nfts-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+}
+
+.nfts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nft-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nft-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+}
+
+.nft-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.nft-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.nft-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #d4af37;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+/* =========================
+   Responsive para The Club y NFTs
+   ========================= */
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 1rem;
+  }
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .location, .social-links {
+    text-align: center;
+    min-width: auto;
+  }
+  .location h3, .social-links h3 {
+    font-size: 1.3rem;
+  }
+  .nfts-description {
+    font-size: 1rem;
+  }
+  .nfts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .nft-card img {
+    height: 200px;
+  }
+  .nft-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   Sección Contacto
+   ========================= */
+.contact-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background: #333;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  background: #d4af37;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7em 1.5em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background: #bfa133;
+  color: #fff;
+  outline: none;
+}
+
+/* =========================
+   Responsive para Contacto
+   ========================= */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 90%;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   Chatbot
+   ========================= */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #d4af37;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon {
+  font-size: 1.5rem;
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatbot-window.active {
+  display: flex;
+}
+
+.chat-header {
+  background: #d4af37;
+  color: #111;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.bot {
+  background: #333;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #d4af37;
+  color: #111;
+  align-self: flex-end;
+}
+
+.message-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.option-btn {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.option-btn:hover {
+  background: #bfa133;
+}
+
+.chat-input-container {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #333;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.chat-input::placeholder {
+  color: #ccc;
+}
+
+.chat-send {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.chat-send:hover {
+  background: #bfa133;
+}
+
+/* =========================
+   Responsive para Chatbot
+   ========================= */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 90vw;
+    height: 60vh;
+    right: -20px;
+  }
+  
+  .chatbot-container {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* =========================
+   Sección Detalle de Experiencia
+   ========================= */
+.experience-details {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.experience-details h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.experience-details p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0 auto 1.5rem auto;
+  max-width: 700px;
+}
+
+.experience-details ul {
+  list-style: disc inside;
+  font-family: "Montserrat", sans-serif;
+  color: #ccc;
+  font-size: 1rem;
+  margin: 0 auto 2rem auto;
+  padding-left: 0;
+  max-width: 500px;
+  text-align: left;
+  display: inline-block;
+}
+
+.experience-details ul li {
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+}
+
+.experience-details img {
+  display: block;
+  margin: 2rem auto 0 auto;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+/* =========================
+   Responsive para Páginas de Detalle
+   ========================= */
+@media (max-width: 768px) {
+  .experience-details h2 {
+    font-size: 1.3rem;
+  }
+  .experience-details img {
+    max-width: 250px;
+  }
+  .experience-details p, 
+  .experience-details ul {
+    font-size: 0.95rem;
+  }
+}
+
+/* Experience Page Styles */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+  color: white;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #D4AF37;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.experience-overview {
+  padding: 80px 0;
+  color: white;
+}
+
+.overview-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.highlight {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.highlight h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #D4AF37;
+}
+
+.highlight p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+  padding: 80px 0;
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1;
+  min-height: 250px;
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: 4/3;
+  min-height: 350px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 20px;
+  color: white;
+}
+
+.gallery-caption h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #D4AF37;
+}
+
+.gallery-caption p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Activities Section */
+.activities-section {
+  padding: 80px 0;
+  color: white;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.activity-card {
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.activity-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.activity-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #D4AF37;
+}
+
+.activity-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #d0d0d0;
+}
+
+.activity-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-card li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #b0b0b0;
+}
+
+.activity-card li:before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+/* NFT Section */
+.nft-section {
+  padding: 80px 0;
+  color: white;
+}
+
+.nft-display {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.nft-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #D4AF37;
+}
+
+.nft-details h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #D4AF37;
+}
+
+.nft-details p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: #d0d0d0;
+}
+
+.nft-features {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nft-features span {
+  background: rgba(212, 175, 55, 0.2);
+  color: #D4AF37;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  color: white;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #d0d0d0;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-option {
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-option h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #D4AF37;
+}
+
+.contact-option p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #d0d0d0;
+}
+
+.member-form, .inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.member-form input, .inquiry-form input, .inquiry-form textarea {
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.member-form input:focus, .inquiry-form input:focus, .inquiry-form textarea:focus {
+  outline: none;
+  border-color: #D4AF37;
+}
+
+.member-form input::placeholder, .inquiry-form input::placeholder, .inquiry-form textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+  color: #1a1a1a;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.experience-footer {
+  background: #0f0f0f;
+  color: #666;
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item.large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nft-display {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PREMIUM EFFECTS - FIXED */
+
+/* 1. Fade-in y parallax suave en portadas */
+.hero.premium-animate, .hero-content.premium-animate, .section-title.premium-animate, .experience-card.premium-animate, .membership-card.premium-animate, .nft-card.premium-animate {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.hero.premium-visible, .hero-content.premium-visible, .section-title.premium-visible, .experience-card.premium-visible, .membership-card.premium-visible, .nft-card.premium-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1.2s cubic-bezier(.4,2,.6,1), transform 1.2s cubic-bezier(.4,2,.6,1);
+}
+
+/* El resto de los efectos premium permanece igual */

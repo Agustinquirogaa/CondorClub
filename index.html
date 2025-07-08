@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Condor Club</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts: Cinzel y Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    .membership-card {
+      border: 3px solid #FFD700;
+      border-radius: 18px;
+      box-shadow: 0 0 32px 0 rgba(255,215,0,0.18), 0 2px 16px rgba(0,0,0,0.18);
+      transition: box-shadow 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1);
+      animation: condorcard-glow-in 1.2s cubic-bezier(.4,2,.6,1);
+    }
+    .membership-card:hover {
+      box-shadow: 0 0 64px 8px #FFD700, 0 2px 32px rgba(0,0,0,0.22);
+      transform: scale(1.04) rotate(-1deg);
+      filter: brightness(1.08) drop-shadow(0 0 12px #FFD70088);
+    }
+    @keyframes condorcard-glow-in {
+      0% { box-shadow: 0 0 0 0 #FFD70000, 0 2px 0 rgba(0,0,0,0.00); filter: brightness(0.8); }
+      60% { box-shadow: 0 0 64px 8px #FFD700, 0 2px 32px rgba(0,0,0,0.22); filter: brightness(1.12); }
+      100% { box-shadow: 0 0 32px 0 rgba(255,215,0,0.18), 0 2px 16px rgba(0,0,0,0.18); filter: brightness(1); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" aria-label="Video background with presentation">
+    <video id="landing-video" class="hero-background" src="Landing video.mp4" autoplay loop muted playsinline poster="caballo.jpg" style="object-fit:cover;width:100vw;height:100vh;position:absolute;top:0;left:0;z-index:-1;"></video>
+    <!-- <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80" alt="Exotic landscape background" class="hero-background"> -->
+    <nav class="nav" aria-label="Main menu">
+      <ul style="align-items:center;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#nfts">NFTs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#the-club">The Club</a></li>
+        <li style="margin-left:2.5rem;display:flex;gap:0.5rem;align-items:center;height:40px;">
+          <span id="lang-eng" class="lang-switch active-lang" style="font-family:Montserrat,sans-serif;color:#fff;background:#181818;padding:0.3em 0.8em;border-radius:18px;font-size:1rem;cursor:pointer;box-shadow:0 0 0 2px #fff;transition:all 0.2s;display:flex;align-items:center;">ENG</span>
+          /
+          <span id="lang-sp" class="lang-switch" style="font-family:Montserrat,sans-serif;color:#fff;background:#181818;padding:0.3em 0.8em;border-radius:18px;font-size:1rem;cursor:pointer;box-shadow:0 0 0 2px #fff;transition:all 0.2s;display:flex;align-items:center;">SP</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="hero-content" aria-label="Main presentation">
+      <h1>The Condor Club</h1>
+      <p>Where the Unattainable Becomes Reality</p>
+    </div>
+  </header>
+  
+  <section id="experiences" class="experiences-section" aria-labelledby="experiences-title">
+    <h2 id="experiences-title" class="section-title" style="padding-left:2.5rem;">Exclusive Experiences</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <img src="caballo.jpg" alt="Patagonia landscape" width="300" height="200">
+        <h3>The Gaucho's Ascent</h3>
+        <p>Immersion in Patagonia with polo and wine.</p>
+        <a href="experiencia-gaucho.html" class="discover-btn">Discover</a>
+      </div>
+      <div class="experience-card">
+        <img src="polo.jpg" alt="Luxury polo match" width="300" height="200">
+        <h3>The Polo Immersion</h3>
+        <p>Experience Argentine polo with expert players and award-winning horses.</p>
+        <a href="experiencia-polo.html" class="discover-btn">Discover</a>
+      </div>
+      <div class="experience-card">
+        <img src="jaguar.jpg" alt="Luxury Amazon jungle" width="300" height="200">
+        <h3>The Amazonian Genesis</h3>
+        <p>Explore the Amazon jungle with private guides and comfort.</p>
+        <a href="experiencia-amazonas.html" class="discover-btn">Discover</a>
+      </div>
+      <div class="experience-card">
+        <img src="barco.jpg" alt="Luxury yacht in Mediterranean" width="300" height="200">
+        <h3>The Mediterranean Yachting Grand Tour</h3>
+        <p>Sail the Mediterranean on a private yacht with onboard chef.</p>
+        <a href="experiencia-yachting.html" class="discover-btn">Discover</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="membership" class="membership-section" aria-labelledby="membership-title" style="background:#181818;">
+    <h2 id="membership-title" class="section-title" style="padding-left:2.5rem;">Exclusive Membership</h2>
+    <p class="membership-description">Join The Condor Club to unlock unparalleled experiences and a legacy of adventure.</p>
+    <img src="condorcard.png" alt="The Condor Club metallic membership card" width="300" height="200" class="membership-card">
+  </section>
+  
+  <section id="nfts" class="nfts-section" aria-labelledby="nfts-title">
+    <h2 id="nfts-title" class="section-title" style="padding-left:2.5rem;">Legacy NFTs</h2>
+    <p class="nfts-description">Exclusive digital artworks that capture the essence of your experiences</p>
+    <div class="nfts-grid">
+      <div class="nft-card">
+        <img src="nft-gaucho.jpg.png" alt="The Gaucho's Ascent NFT" width="250" height="250">
+        <h3>The Gaucho's Ascent</h3>
+        <p>Patagonia Legacy</p>
+      </div>
+      <div class="nft-card">
+        <img src="nft-polo.jpg.png" alt="The Polo Immersion NFT" width="250" height="250">
+        <h3>The Polo Immersion</h3>
+        <p>Polo Legacy</p>
+      </div>
+      <div class="nft-card">
+        <img src="nft-amazon.jpg.png" alt="The Amazonian Genesis NFT" width="250" height="250">
+        <h3>The Amazonian Genesis</h3>
+        <p>Amazon Legacy</p>
+      </div>
+      <div class="nft-card">
+        <img src="nft-yacht.jpg.png" alt="The Mediterranean Yachting Grand Tour NFT" width="250" height="250">
+        <h3>The Mediterranean Yachting</h3>
+        <p>Mediterranean Legacy</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="the-club" class="club-section" aria-labelledby="club-title">
+    <h2 id="club-title" class="section-title" style="padding-left:2.5rem;">The Club</h2>
+    <div class="about-content">
+      <p>The Condor Club is a boutique luxury experience company founded five years ago with a singular mission: to create unparalleled adventures for an exclusive community of discerning individuals.</p>
+      <p>We operate under a strict membership model with limited annual admissions, ensuring the highest standards of exclusivity and personalized service. Our carefully curated experiences are designed for those who seek not just luxury, but legacy.</p>
+      <p>With a maximum of 50 new members per year and rigorous entry requirements, we maintain the intimate atmosphere that defines true exclusivity. Each experience is crafted to transcend the ordinary and create lasting memories that become part of your personal legacy.</p>
+      
+      <div class="contact-info">
+        <div class="location">
+          <h3>Headquarters</h3>
+          <p>Luxembourg City, Luxembourg</p>
+          <p>Rue de la Paix 15, 2314 Luxembourg</p>
+        </div>
+        
+        <div class="social-links">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <main>
+    <section id="contact" aria-labelledby="contact-title"></section>
+  </main>
+  <script src="script.js"></script>
+  
+  <!-- Chatbot -->
+  <div class="chatbot-container" aria-label="The Condor Club Chatbot">
+    <button class="chatbot-toggle" aria-label="Open chat" aria-expanded="false">
+      <span class="chat-icon">💬</span>
+    </button>
+    
+    <div class="chatbot-window" aria-label="Chat window">
+      <div class="chat-header">
+        <h3>The Condor Club</h3>
+        <button class="chat-close" aria-label="Close chat">×</button>
+      </div>
+      
+      <div class="chat-messages" aria-live="polite">
+        <!-- Messages will be added dynamically -->
+      </div>
+      
+      <div class="chat-input-container">
+        <input type="text" class="chat-input" placeholder="Type your message..." aria-label="Message">
+        <button class="chat-send" aria-label="Send message">→</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Traducciones
+    const translations = {
+      en: {
+        home: 'Home',
+        experiences: 'Experiences',
+        membership: 'Membership',
+        nfts: 'NFTs',
+        blog: 'Blog',
+        theClub: 'The Club',
+        exclusiveExperiences: 'Exclusive Experiences',
+        exclusiveMembership: 'Exclusive Membership',
+        legacyNFTs: 'Legacy NFTs',
+        theClubTitle: 'The Club',
+        membershipDesc: 'Join The Condor Club to unlock unparalleled experiences and a legacy of adventure.',
+        nftsDesc: 'Exclusive digital artworks that capture the essence of your experiences',
+        about1: 'The Condor Club is a boutique luxury experience company founded five years ago with a singular mission: to create unparalleled adventures for an exclusive community of discerning individuals.',
+        about2: 'We operate under a strict membership model with limited annual admissions, ensuring the highest standards of exclusivity and personalized service. Our carefully curated experiences are designed for those who seek not just luxury, but legacy.',
+        about3: 'With a maximum of 50 new members per year and rigorous entry requirements, we maintain the intimate atmosphere that defines true exclusivity. Each experience is crafted to transcend the ordinary and create lasting memories that become part of your personal legacy.',
+        exp1Title: "The Gaucho's Ascent",
+        exp1Desc: 'Immersion in Patagonia with polo and wine.',
+        exp2Title: 'The Polo Immersion',
+        exp2Desc: 'Experience Argentine polo with expert players and award-winning horses.',
+        exp3Title: 'The Amazonian Genesis',
+        exp3Desc: 'Explore the Amazon jungle with private guides and comfort.',
+        exp4Title: 'The Mediterranean Yachting Grand Tour',
+        exp4Desc: 'Sail the Mediterranean on a private yacht with onboard chef.',
+        discover: 'Discover'
+      },
+      es: {
+        home: 'Home',
+        experiences: 'Experiencias',
+        membership: 'Membership',
+        nfts: 'NFTs',
+        blog: 'Blog',
+        theClub: 'The Club',
+        exclusiveExperiences: 'Experiencias Exclusivas',
+        exclusiveMembership: 'Membresía Exclusiva',
+        legacyNFTs: 'NFTs de Legado',
+        theClubTitle: 'The Club',
+        membershipDesc: 'Únete a The Condor Club para acceder a experiencias incomparables y un legado de aventura.',
+        nftsDesc: 'Obras digitales exclusivas que capturan la esencia de tus experiencias',
+        about1: 'The Condor Club es una empresa boutique de experiencias de lujo fundada hace cinco años con una misión singular: crear aventuras inigualables para una comunidad exclusiva de personas exigentes.',
+        about2: 'Operamos bajo un modelo de membresía estricta con admisiones anuales limitadas, asegurando los más altos estándares de exclusividad y servicio personalizado. Nuestras experiencias cuidadosamente curadas están diseñadas para quienes buscan no solo lujo, sino legado.',
+        about3: 'Con un máximo de 50 nuevos miembros por año y rigurosos requisitos de ingreso, mantenemos la atmósfera íntima que define la verdadera exclusividad. Cada experiencia está diseñada para trascender lo ordinario y crear recuerdos duraderos que se convierten en parte de tu legado personal.',
+        exp1Title: "El Ascenso del Gaucho",
+        exp1Desc: 'Inmersión en la Patagonia con polo y vino.',
+        exp2Title: 'La Inmersión en el Polo',
+        exp2Desc: 'Vive el polo argentino con jugadores expertos y caballos premiados.',
+        exp3Title: 'La Génesis Amazónica',
+        exp3Desc: 'Explora la selva amazónica con guías privados y confort.',
+        exp4Title: 'El Gran Tour Mediterráneo en Yate',
+        exp4Desc: 'Navega el Mediterráneo en un yate privado con chef a bordo.',
+        discover: 'Descubrir'
+      }
+    };
+    function setLang(lang) {
+      document.getElementById('lang-eng').classList.toggle('active-lang', lang==='en');
+      document.getElementById('lang-sp').classList.toggle('active-lang', lang==='es');
+      document.querySelector('a[href="index.html"]').textContent = translations[lang].home;
+      document.querySelector('a[href="#experiences"]').textContent = translations[lang].experiences;
+      document.querySelector('a[href="#membership"]').textContent = translations[lang].membership;
+      document.querySelector('a[href="#nfts"]').textContent = translations[lang].nfts;
+      document.querySelector('a[href="blog.html"]').textContent = translations[lang].blog;
+      document.querySelector('a[href="#the-club"]').textContent = translations[lang].theClub;
+      document.getElementById('experiences-title').textContent = translations[lang].exclusiveExperiences;
+      document.getElementById('membership-title').textContent = translations[lang].exclusiveMembership;
+      document.getElementById('nfts-title').textContent = translations[lang].legacyNFTs;
+      document.getElementById('club-title').textContent = translations[lang].theClubTitle;
+      document.querySelector('.membership-description').textContent = translations[lang].membershipDesc;
+      document.querySelector('.nfts-description').textContent = translations[lang].nftsDesc;
+      const about = document.querySelectorAll('.about-content p');
+      about[0].textContent = translations[lang].about1;
+      about[1].textContent = translations[lang].about2;
+      about[2].textContent = translations[lang].about3;
+
+      // Experiencias exclusivas
+      const expTitles = [
+        document.querySelectorAll('.experience-card h3')[0],
+        document.querySelectorAll('.experience-card h3')[1],
+        document.querySelectorAll('.experience-card h3')[2],
+        document.querySelectorAll('.experience-card h3')[3]
+      ];
+      const expDescs = [
+        document.querySelectorAll('.experience-card p')[0],
+        document.querySelectorAll('.experience-card p')[1],
+        document.querySelectorAll('.experience-card p')[2],
+        document.querySelectorAll('.experience-card p')[3]
+      ];
+      const expBtns = document.querySelectorAll('.experience-card .discover-btn');
+      expTitles[0].textContent = translations[lang].exp1Title;
+      expDescs[0].textContent = translations[lang].exp1Desc;
+      expTitles[1].textContent = translations[lang].exp2Title;
+      expDescs[1].textContent = translations[lang].exp2Desc;
+      expTitles[2].textContent = translations[lang].exp3Title;
+      expDescs[2].textContent = translations[lang].exp3Desc;
+      expTitles[3].textContent = translations[lang].exp4Title;
+      expDescs[3].textContent = translations[lang].exp4Desc;
+      expBtns.forEach(btn => btn.textContent = translations[lang].discover);
+    }
+    document.getElementById('lang-eng').onclick = () => setLang('en');
+    document.getElementById('lang-sp').onclick = () => setLang('es');
+    // Efecto visual activo
+    const langSwitches = document.querySelectorAll('.lang-switch');
+    langSwitches.forEach(el => {
+      el.onmouseenter = () => {
+        el.style.background = '#FFD700';
+        el.style.color = '#111';
+        el.style.boxShadow = '0 0 0 2px #FFD700';
+      };
+      el.onmouseleave = () => {
+        if(el.classList.contains('active-lang')) {
+          el.style.background = '#FFD700';
+          el.style.color = '#111';
+          el.style.boxShadow = '0 0 0 2px #FFD700';
+        } else {
+          el.style.background = '#181818';
+          el.style.color = '#fff';
+          el.style.boxShadow = '0 0 0 2px #fff';
+        }
+      };
+    });
+    // Inicializar idioma por defecto
+    setLang('en');
+    // Marcar visualmente el activo
+    function updateActiveLang() {
+      langSwitches.forEach(el => {
+        if(el.classList.contains('active-lang')) {
+          el.style.background = '#FFD700';
+          el.style.color = '#111';
+          el.style.boxShadow = '0 0 0 2px #FFD700';
+        } else {
+          el.style.background = '#181818';
+          el.style.color = '#fff';
+          el.style.boxShadow = '0 0 0 2px #fff';
+        }
+      });
+    }
+    document.getElementById('lang-eng').addEventListener('click', updateActiveLang);
+    document.getElementById('lang-sp').addEventListener('click', updateActiveLang);
+  </script>
+  <script>
+    // Reiniciar el video de fondo al segundo 22
+    const landingVideo = document.getElementById('landing-video');
+    if (landingVideo) {
+      landingVideo.addEventListener('timeupdate', function() {
+        if (landingVideo.currentTime >= 22) {
+          landingVideo.currentTime = 0;
+          landingVideo.play();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+    
